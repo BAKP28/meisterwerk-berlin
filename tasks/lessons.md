@@ -52,3 +52,63 @@
   10. Footer (Standorte, Impressum, Nav)
 
 **Warum:** Der User hat selbst gesagt: "man will Ergebnisse sehen, direkt wissen wie's weiter geht". Ablauf gehört vor Kontakt, FAQ ans Ende.
+
+---
+
+## 2026-04-05 – SEO-Setup ist Pflicht bei jedem neuen Demo-Projekt
+
+**Problem:** Demo wurde gebaut, aber `layout.tsx` hatte noch "Create Next App" als Titel und Description. Google würde die Seite quasi nicht auffinden. Keine sitemap.xml, keine robots.txt, kein LocalBusiness-Schema.
+
+**Regel:** **Ab jetzt wird jede neue Demo-Website von Anfang an SEO-ready gebaut.** Das ist kein Nachgedanke, sondern Teil des Setups. Ohne SEO ist die Seite für den Kunden wertlos — sie wird nicht gefunden.
+
+**SEO-Checkliste für jede neue Demo:**
+
+1. **Metadata in layout.tsx** (bei Next.js) bzw. im `<head>` (bei HTML):
+   - `title` mit Hauptkeyword + Stadt + Betriebsart (z.B. "Rollladen Berlin – Meisterbetrieb")
+   - `description` 150-160 Zeichen, mit Telefonnummer als Call-to-Action
+   - `keywords` Array mit 8-12 lokalen Keywords
+   - `metadataBase` auf die echte Domain setzen
+2. **OpenGraph + Twitter Cards** — für WhatsApp/Facebook-Vorschauen
+3. **Robots-Tags** — `index: true, follow: true`
+4. **sitemap.ts** erstellen (Next.js generiert daraus automatisch /sitemap.xml)
+5. **robots.ts** erstellen (Next.js generiert /robots.txt)
+6. **LocalBusiness JSON-LD Schema** im `<body>` einbauen mit:
+   - `@type`: passender Typ (HomeAndConstructionBusiness, LegalService, MedicalClinic, etc.)
+   - Adresse, Telefon, E-Mail, Öffnungszeiten, Services, areaServed
+7. **Canonical URL** setzen
+8. **lang="de"** auf `<html>` (ist meist schon da)
+9. **H1-Struktur prüfen**: Nur ein `<h1>` pro Seite mit Hauptkeyword
+10. **Alt-Texte** auf allen Bildern
+
+**Für welchen Branchentyp welcher Schema-Type:**
+| Branche | schema.org @type |
+|---|---|
+| Handwerker (Rollladen, Elektriker, Maler) | HomeAndConstructionBusiness |
+| Anwalt / Kanzlei | LegalService |
+| Steuerberater | AccountingService |
+| Arzt / Praxis | MedicalClinic / MedicalBusiness |
+| Restaurant | Restaurant |
+| Allgemein lokal | LocalBusiness |
+
+**Warum:** Lokale Dienstleister leben von lokaler Google-Sichtbarkeit. Eine Demo ohne SEO-Setup ist kein überzeugendes Verkaufsargument. Außerdem: Je mehr SEO drin ist, desto stärker das Upsell-Argument ("Google Business Profil mit einrichten").
+
+---
+
+## 2026-04-05 – Google Business Profil ist Upsell-Gold
+
+**Regel:** Bei jedem Verkaufsgespräch Google Business Profil als **zusätzliche Dienstleistung** anbieten.
+
+**Verkaufsargumente (die B im Pitch nutzen kann):**
+
+1. **"Kostenlos und bringt 80% Ihrer lokalen Anfragen"** — Google Business ist gratis und der wichtigste Hebel für lokale Sichtbarkeit.
+2. **"Ihre Konkurrenz ist schon da"** — wer keinen Eintrag hat, existiert für Google Maps nicht.
+3. **"Sie werden im Kartenausschnitt oben angezeigt"** — über den normalen Suchergebnissen, mit Sternen, Telefon, Anfahrt.
+4. **"15 Minuten mit Ihnen zusammen, dann läuft's"** — niedrige Einstiegshürde.
+5. **"Ich helfe Ihnen auch, die ersten 5 Bewertungen zu organisieren"** — 5 Sterne pushen Ranking enorm.
+
+**Workflow:** Google Business Profil richtet der **Kunde** ein (Verifizierung läuft per Postkarte an seine Adresse / Anruf auf seine Nummer). B setzt sich mit dem Kunden zusammen und füllt es gemeinsam aus. KEIN eigenes Google-Business-Konto nötig.
+
+**Paket-Angebot an Kunden:**
+"Website + Google Business Einrichtung + Startbewertungen organisieren" = Komplett-Paket.
+
+**Warum:** Die schönste SEO-optimierte Website bringt wenig ohne Google Business Eintrag. Umgekehrt: Google Business ohne Website wirkt unseriös. Beides zusammen = volle Wirkung. Ist das perfekte Upsell direkt nach der Website-Abnahme.
