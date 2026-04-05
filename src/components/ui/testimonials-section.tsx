@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { motion } from "motion/react";
 import { Star } from "lucide-react";
 
@@ -73,96 +72,113 @@ const testimonials: Testimonial[] = [
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className="p-6 rounded-2xl border border-[#1a365d]/10 bg-white shadow-lg max-w-sm w-full">
+  <div className="p-6 rounded-2xl border border-[#1a365d]/10 bg-white shadow-md hover:shadow-xl transition-shadow duration-300 w-[340px] flex-shrink-0">
     <div className="flex gap-1 mb-3">
       {[...Array(5)].map((_, i) => (
         <Star key={i} className="w-4 h-4 fill-[#dc2626] text-[#dc2626]" />
       ))}
     </div>
-    <p className="text-[#1a365d]/80 text-sm leading-relaxed mb-4">
-      "{testimonial.text}"
+    <p className="text-[#1a365d]/80 text-sm leading-relaxed mb-4 line-clamp-4">
+      &ldquo;{testimonial.text}&rdquo;
     </p>
-    <div className="flex items-center gap-2">
-      <div className="w-8 h-8 rounded-full bg-[#1a365d] flex items-center justify-center text-white font-bold text-xs">
+    <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
+      <div className="w-9 h-9 rounded-full bg-[#1a365d] flex items-center justify-center text-white font-bold text-sm">
         {testimonial.name.charAt(0)}
       </div>
-      <div className="text-xs font-medium text-[#1a365d]">
-        {testimonial.name}
+      <div>
+        <p className="text-sm font-semibold text-[#1a365d] leading-tight">
+          {testimonial.name}
+        </p>
+        <p className="text-xs text-[#1a365d]/50">{testimonial.role}</p>
       </div>
     </div>
   </div>
 );
 
-const TestimonialsColumn = ({
-  testimonialsData,
-  duration = 15,
+const MarqueeRow = ({
+  items,
+  direction = "left",
+  duration = 40,
 }: {
-  testimonialsData: Testimonial[];
+  items: Testimonial[];
+  direction?: "left" | "right";
   duration?: number;
 }) => {
+  // Verdopple die Items für nahtlose Schleife
+  const duplicated = [...items, ...items];
+
   return (
-    <div className="flex flex-col gap-4 w-full max-w-sm">
+    <div className="overflow-hidden group">
       <motion.div
+        className="flex gap-6"
         animate={{
-          translateY: "-50%",
+          x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"],
         }}
         transition={{
-          duration: duration,
+          duration,
           repeat: Infinity,
           ease: "linear",
           repeatType: "loop",
         }}
-        className="flex flex-col gap-4 pb-4"
+        style={{ width: "max-content" }}
       >
-        {[...new Array(2)].fill(0).map((_, index) =>
-          testimonialsData.map((testimonial, i) => (
-            <React.Fragment key={`${index}-${i}`}>
-              <TestimonialCard testimonial={testimonial} />
-            </React.Fragment>
-          )),
-        )}
+        {duplicated.map((testimonial, i) => (
+          <TestimonialCard key={i} testimonial={testimonial} />
+        ))}
       </motion.div>
     </div>
   );
 };
 
 const TestimonialsSection = () => {
-  const firstColumn = testimonials.slice(0, 4);
-  const secondColumn = testimonials.slice(4, 8);
-  const thirdColumn = testimonials.slice(8, 12);
+  const firstRow = testimonials.slice(0, 6);
+  const secondRow = testimonials.slice(6, 12);
 
   return (
-    <section className="py-16 bg-white relative">
-      {/* Header - outside gradient */}
-      <div className="container mx-auto px-6 mb-10 relative z-10">
+    <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      {/* Header */}
+      <div className="container mx-auto px-6 mb-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="flex flex-col items-center"
+          className="flex flex-col items-center text-center"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a365d] text-center">
+          <span className="text-[#dc2626] font-semibold text-sm uppercase tracking-[0.2em] mb-3">
+            Kundenstimmen
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#1a365d]">
             Das sagen unsere Kunden
           </h2>
+          <div className="w-16 h-1 bg-[#dc2626] mx-auto mt-6 mb-6 rounded-full" />
+          <div className="flex items-center gap-3">
+            <div className="flex">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className="w-5 h-5 fill-[#dc2626] text-[#dc2626]"
+                />
+              ))}
+            </div>
+            <span className="text-[#1a365d] font-bold text-lg">4,8</span>
+            <span className="text-[#1a365d]/60 text-sm">
+              aus 58 Google Bewertungen
+            </span>
+          </div>
         </motion.div>
       </div>
 
-      {/* Animated Testimonials - 3 columns with different speeds */}
+      {/* Horizontales Marquee - 2 Reihen in Gegenrichtung */}
       <div className="relative">
-        <div className="flex justify-center gap-6 px-6 overflow-hidden h-[500px]">
-          <TestimonialsColumn testimonialsData={firstColumn} duration={20} />
-          <div className="hidden md:block">
-            <TestimonialsColumn testimonialsData={secondColumn} duration={25} />
-          </div>
-          <div className="hidden lg:block">
-            <TestimonialsColumn testimonialsData={thirdColumn} duration={22} />
-          </div>
+        <div className="flex flex-col gap-6">
+          <MarqueeRow items={firstRow} direction="left" duration={50} />
+          <MarqueeRow items={secondRow} direction="right" duration={55} />
         </div>
 
-        {/* Gradient fade only at top and bottom of cards area */}
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-white to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+        {/* Gradient fade an den Seiten */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none z-10" />
       </div>
     </section>
   );

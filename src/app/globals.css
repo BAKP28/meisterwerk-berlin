@@ -36,6 +36,17 @@
   animation: aurora 60s linear infinite;
 }
 
+/* Info Card Style - Neomorphic */
+.info-card {
+  width: 280px;
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow:
+    8px 8px 16px #bebebe,
+    -8px -8px 16px #ffffff;
+  padding: 24px;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

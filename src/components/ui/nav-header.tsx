@@ -37,6 +37,7 @@ const navItems = [
 
 function NavHeader() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const closeTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
 
   return (
     <header className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-lg border-b border-[#1a365d]">
@@ -68,10 +69,22 @@ function NavHeader() {
                 <li
                   key={item.label}
                   className="relative"
-                  onMouseEnter={() =>
-                    item.hasDropdown && setOpenDropdown(item.label)
-                  }
-                  onMouseLeave={() => item.hasDropdown && setOpenDropdown(null)}
+                  onMouseEnter={() => {
+                    if (item.hasDropdown) {
+                      if (closeTimeoutRef.current) {
+                        clearTimeout(closeTimeoutRef.current);
+                        closeTimeoutRef.current = null;
+                      }
+                      setOpenDropdown(item.label);
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    if (item.hasDropdown) {
+                      closeTimeoutRef.current = setTimeout(() => {
+                        setOpenDropdown(null);
+                      }, 150);
+                    }
+                  }}
                 >
                   <Link
                     href={item.href}
