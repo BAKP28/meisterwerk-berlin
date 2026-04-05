@@ -125,7 +125,7 @@ export function HeroCarousel() {
             <p className="text-white/90 text-base md:text-lg leading-relaxed mb-5 max-w-md drop-shadow">
               {active.subtitle}
             </p>
-            <button className="inline-flex items-center gap-2 bg-white text-[#1a365d] px-6 py-3 rounded-lg font-bold text-sm hover:bg-[#dc2626] hover:text-white transition-all duration-300 shadow-lg">
+            <button className="inline-flex items-center gap-2 bg-white text-[#0a0a0a] px-6 py-3 rounded-lg font-bold text-sm hover:bg-[#dc2626] hover:text-white transition-all duration-300 shadow-lg">
               Mehr erfahren
               <svg
                 className="w-4 h-4 transition-transform group-hover:translate-x-1"

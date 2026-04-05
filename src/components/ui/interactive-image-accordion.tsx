@@ -15,10 +15,10 @@ const accordionItems: AccordionItemData[] = [
   {
     id: 1,
     title: "Rollladen Reparatur",
-    bgColor: "#1a365d",
+    bgColor: "#0a0a0a",
     description:
       "Schnelle Reparatur vor Ort - Motorschäden, Gurtwechsel, Panne.",
-    gradient: "linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%)",
+    gradient: "linear-gradient(135deg, #0a0a0a 0%, #2c5282 50%, #0a0a0a 100%)",
   },
   {
     id: 2,
@@ -34,12 +34,12 @@ const accordionItems: AccordionItemData[] = [
     bgColor: "#2c5282",
     description:
       "Spezialisten für klassische Holzrollläden - Reparatur & Pflege.",
-    gradient: "linear-gradient(135deg, #2c5282 0%, #1a365d 50%, #2c5282 100%)",
+    gradient: "linear-gradient(135deg, #2c5282 0%, #0a0a0a 50%, #2c5282 100%)",
   },
   {
     id: 4,
     title: "Markisen",
-    bgColor: "#1a365d",
+    bgColor: "#0a0a0a",
     description:
       "Markisen Reparatur und Neuinstallation für Ihren Sonnenschutz.",
     gradient: "linear-gradient(135deg, #1e3a5f 0%, #2c5282 50%, #1e3a5f 100%)",
@@ -116,7 +116,7 @@ const AccordionItem = ({ item, isActive }: AccordionItemProps) => {
           </span>
         )}
         {isActive && (
-          <button className="mt-4 bg-white text-[#1a365d] px-6 py-2 rounded-lg font-bold hover:bg-gray-100 transition-colors shadow-lg text-sm">
+          <button className="mt-4 bg-white text-[#0a0a0a] px-6 py-2 rounded-lg font-bold hover:bg-gray-100 transition-colors shadow-lg text-sm">
             Mehr erfahren
           </button>
         )}

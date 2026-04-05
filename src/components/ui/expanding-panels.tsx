@@ -47,7 +47,7 @@ export function ExpandingPanels({
             }}
             className={`relative overflow-hidden rounded-2xl cursor-pointer border ${
               isActive
-                ? "bg-[#1a365d] border-[#1a365d]"
+                ? "bg-[#0a0a0a] border-[#0a0a0a]"
                 : "bg-white border-gray-200"
             }`}
             style={{
@@ -70,7 +70,7 @@ export function ExpandingPanels({
                   <Icon className="w-5 h-5 text-[#dc2626]" />
                 </div>
                 <span
-                  className="text-[#1a365d] font-bold uppercase tracking-[0.2em] text-xs whitespace-nowrap"
+                  className="text-[#0a0a0a] font-bold uppercase tracking-[0.2em] text-xs whitespace-nowrap"
                   style={{
                     writingMode: "vertical-rl",
                     transform: "rotate(180deg)",

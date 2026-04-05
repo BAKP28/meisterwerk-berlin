@@ -72,24 +72,24 @@ const testimonials: Testimonial[] = [
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className="p-6 rounded-2xl border border-[#1a365d]/10 bg-white shadow-md hover:shadow-xl transition-shadow duration-300 w-[340px] flex-shrink-0">
+  <div className="p-6 rounded-2xl border border-[#0a0a0a]/10 bg-white shadow-md hover:shadow-xl transition-shadow duration-300 w-[340px] flex-shrink-0">
     <div className="flex gap-1 mb-3">
       {[...Array(5)].map((_, i) => (
         <Star key={i} className="w-4 h-4 fill-[#dc2626] text-[#dc2626]" />
       ))}
     </div>
-    <p className="text-[#1a365d]/80 text-sm leading-relaxed mb-4 line-clamp-4">
+    <p className="text-[#0a0a0a]/80 text-sm leading-relaxed mb-4 line-clamp-4">
       &ldquo;{testimonial.text}&rdquo;
     </p>
     <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-      <div className="w-9 h-9 rounded-full bg-[#1a365d] flex items-center justify-center text-white font-bold text-sm">
+      <div className="w-9 h-9 rounded-full bg-[#0a0a0a] flex items-center justify-center text-white font-bold text-sm">
         {testimonial.name.charAt(0)}
       </div>
       <div>
-        <p className="text-sm font-semibold text-[#1a365d] leading-tight">
+        <p className="text-sm font-semibold text-[#0a0a0a] leading-tight">
           {testimonial.name}
         </p>
-        <p className="text-xs text-[#1a365d]/50">{testimonial.role}</p>
+        <p className="text-xs text-[#0a0a0a]/50">{testimonial.role}</p>
       </div>
     </div>
   </div>
@@ -148,7 +148,7 @@ const TestimonialsSection = () => {
           <span className="text-[#dc2626] font-semibold text-sm uppercase tracking-[0.2em] mb-3">
             Kundenstimmen
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#1a365d]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0a0a0a]">
             Das sagen unsere Kunden
           </h2>
           <div className="w-16 h-1 bg-[#dc2626] mx-auto mt-6 mb-6 rounded-full" />
@@ -161,8 +161,8 @@ const TestimonialsSection = () => {
                 />
               ))}
             </div>
-            <span className="text-[#1a365d] font-bold text-lg">4,8</span>
-            <span className="text-[#1a365d]/60 text-sm">
+            <span className="text-[#0a0a0a] font-bold text-lg">4,8</span>
+            <span className="text-[#0a0a0a]/60 text-sm">
               aus 58 Google Bewertungen
             </span>
           </div>

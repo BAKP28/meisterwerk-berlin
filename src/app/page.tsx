@@ -88,24 +88,24 @@ function HeroSection() {
       <div className="container mx-auto px-6 relative z-10 pt-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-160px)]">
           {/* LEFT SIDE: Text - vertically centered */}
-          <div className="text-[#1a365d] flex flex-col justify-center py-12">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-2 leading-tight tracking-tight text-[#1a365d]">
+          <div className="text-[#0a0a0a] flex flex-col justify-center py-12">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-2 leading-tight tracking-tight text-[#0a0a0a]">
               Rollladen-Profis
               <span className="block text-[#dc2626]">für Berlin</span>
             </h1>
             <div className="mb-6 flex items-center">
-              <span className="text-xl md:text-2xl text-[#1a365d]/70 mr-2">
+              <span className="text-xl md:text-2xl text-[#0a0a0a]/70 mr-2">
                 Experten für
               </span>
               <CyclingText />
             </div>
-            <p className="text-xl md:text-2xl text-[#1a365d]/70 mb-6 leading-relaxed">
+            <p className="text-xl md:text-2xl text-[#0a0a0a]/70 mb-6 leading-relaxed">
               Rollladen-Reparatur vor Ort, Holzrollläden, Elektroantrieb,
               Einbruchschutz und Markisen – alles aus einer Hand. Reparatur oft
               noch am gleichen Tag. Faire Preise, eigene Monteure, keine
               Subunternehmer.
             </p>
-            <ul className="text-lg text-[#1a365d]/70 mb-10 space-y-2">
+            <ul className="text-lg text-[#0a0a0a]/70 mb-10 space-y-2">
               <li className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-[#dc2626] rounded-full"></span>
                 Schnelle Hilfe bei Notfällen - 24/7 erreichbar
@@ -129,7 +129,7 @@ function HeroSection() {
                 </button>
               </a>
               <Link href="#kontakt" className="w-full sm:w-auto">
-                <button className="button-blue w-full sm:w-auto flex items-center justify-center px-8 py-4 relative bg-transparent cursor-pointer border-2 border-[#1a365d] overflow-hidden rounded-[30px] text-[#1a365d] transition-all duration-500 ease-in-out hover:box-shadow-[1px_1px_200px_rgba(26,54,93,0.5)] hover:text-white group">
+                <button className="button-blue w-full sm:w-auto flex items-center justify-center px-8 py-4 relative bg-transparent cursor-pointer border-2 border-[#0a0a0a] overflow-hidden rounded-[30px] text-[#0a0a0a] transition-all duration-500 ease-in-out hover:box-shadow-[1px_1px_200px_rgba(26,54,93,0.5)] hover:text-white group">
                   <span className="btn-txt text-base font-bold relative z-10 transition-all duration-500 group-hover:text-white">
                     Kontakt aufnehmen
                   </span>
@@ -140,7 +140,7 @@ function HeroSection() {
                       left: 0;
                       top: 0;
                       transition: all 0.5s ease-in-out;
-                      background-color: #1a365d;
+                      background-color: #0a0a0a;
                       border-radius: 30px;
                       visibility: hidden;
                       height: 10px;
@@ -157,16 +157,16 @@ function HeroSection() {
             </div>
 
             {/* Trust Badges */}
-            <div className="mt-10 pt-8 border-t border-[#1a365d]/10 flex flex-wrap items-center gap-x-8 gap-y-4">
+            <div className="mt-10 pt-8 border-t border-[#0a0a0a]/10 flex flex-wrap items-center gap-x-8 gap-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-[#dc2626]/10 flex items-center justify-center flex-shrink-0">
                   <Award className="w-5 h-5 text-[#dc2626]" />
                 </div>
                 <div>
-                  <p className="text-xl font-bold text-[#1a365d] leading-none">
+                  <p className="text-xl font-bold text-[#0a0a0a] leading-none">
                     <NumberTicker value={15} />+
                   </p>
-                  <p className="text-xs text-[#1a365d]/60 mt-1">
+                  <p className="text-xs text-[#0a0a0a]/60 mt-1">
                     Jahre Erfahrung
                   </p>
                 </div>
@@ -176,10 +176,10 @@ function HeroSection() {
                   <CalendarCheck className="w-5 h-5 text-[#dc2626]" />
                 </div>
                 <div>
-                  <p className="text-xl font-bold text-[#1a365d] leading-none">
+                  <p className="text-xl font-bold text-[#0a0a0a] leading-none">
                     <NumberTicker value={1200} />+
                   </p>
-                  <p className="text-xs text-[#1a365d]/60 mt-1">
+                  <p className="text-xs text-[#0a0a0a]/60 mt-1">
                     Aufträge erledigt
                   </p>
                 </div>
@@ -189,10 +189,10 @@ function HeroSection() {
                   <Star className="w-5 h-5 text-[#dc2626] fill-[#dc2626]" />
                 </div>
                 <div>
-                  <p className="text-xl font-bold text-[#1a365d] leading-none">
+                  <p className="text-xl font-bold text-[#0a0a0a] leading-none">
                     <NumberTicker value={4.8} decimals={1} />★
                   </p>
-                  <p className="text-xs text-[#1a365d]/60 mt-1">
+                  <p className="text-xs text-[#0a0a0a]/60 mt-1">
                     Google Bewertung
                   </p>
                 </div>
@@ -209,8 +209,8 @@ function HeroSection() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-8 h-12 border-2 border-[#1a365d]/30 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-3 bg-[#1a365d]/50 rounded-full" />
+        <div className="w-8 h-12 border-2 border-[#0a0a0a]/30 rounded-full flex justify-center pt-2">
+          <div className="w-1 h-3 bg-[#0a0a0a]/50 rounded-full" />
         </div>
       </div>
     </section>
@@ -264,7 +264,7 @@ function LeistungenSection() {
           <span className="text-[#dc2626] font-semibold text-sm uppercase tracking-[0.2em]">
             Unsere Leistungen
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1a365d] mt-3 mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0a0a0a] mt-3 mb-4 tracking-tight">
             Rollladen-Service aus einer Hand
           </h2>
           <div className="w-16 h-1 bg-[#dc2626] mx-auto mb-6 rounded-full" />
@@ -362,7 +362,7 @@ function FaqSection() {
           <span className="text-[#dc2626] font-semibold text-sm uppercase tracking-[0.2em]">
             Häufige Fragen
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1a365d] mt-3 mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0a0a0a] mt-3 mb-4 tracking-tight">
             Wir beantworten gerne
           </h2>
           <div className="w-16 h-1 bg-[#dc2626] mx-auto mb-6 rounded-full" />
@@ -386,19 +386,19 @@ function FaqItem({ frage, antwort }: { frage: string; antwort: string }) {
       className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
         isOpen
           ? "border-[#dc2626]/30 bg-gradient-to-br from-[#dc2626]/5 to-transparent shadow-md"
-          : "border-gray-200 bg-white hover:border-[#1a365d]/20"
+          : "border-gray-200 bg-white hover:border-[#0a0a0a]/20"
       }`}
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
       >
-        <span className={`font-semibold text-base md:text-lg transition-colors ${isOpen ? "text-[#dc2626]" : "text-[#1a365d]"}`}>
+        <span className={`font-semibold text-base md:text-lg transition-colors ${isOpen ? "text-[#dc2626]" : "text-[#0a0a0a]"}`}>
           {frage}
         </span>
         <span
           className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
-            isOpen ? "bg-[#dc2626] text-white rotate-45" : "bg-[#1a365d]/5 text-[#1a365d]"
+            isOpen ? "bg-[#dc2626] text-white rotate-45" : "bg-[#0a0a0a]/5 text-[#0a0a0a]"
           }`}
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -454,7 +454,7 @@ function GalerieSection() {
           <span className="text-[#dc2626] font-semibold text-sm uppercase tracking-[0.2em]">
             Unsere Arbeit
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1a365d] mt-3 mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0a0a0a] mt-3 mb-4 tracking-tight">
             Vorher & Nachher
           </h2>
           <div className="w-16 h-1 bg-[#dc2626] mx-auto mb-6 rounded-full" />
@@ -503,7 +503,7 @@ function BeforeAfterCard({
 
       {/* Badge "Vorher" / "Nachher" */}
       <div className="absolute top-4 left-4 z-10">
-        <span className="bg-white/95 backdrop-blur-sm text-[#1a365d] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md transition-opacity duration-500 group-hover:opacity-0">
+        <span className="bg-white/95 backdrop-blur-sm text-[#0a0a0a] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md transition-opacity duration-500 group-hover:opacity-0">
           Vorher
         </span>
         <span className="absolute top-0 left-0 bg-[#dc2626] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -554,7 +554,7 @@ function AblaufSection() {
           <span className="text-[#dc2626] font-semibold text-sm uppercase tracking-[0.2em]">
             So läuft&apos;s ab
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1a365d] mt-3 mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0a0a0a] mt-3 mb-4 tracking-tight">
             In 4 Schritten zur Reparatur
           </h2>
           <div className="w-16 h-1 bg-[#dc2626] mx-auto mb-6 rounded-full" />
@@ -567,7 +567,7 @@ function AblaufSection() {
         <div className="relative max-w-6xl mx-auto">
           {/* Connecting line */}
           <div
-            className="hidden lg:block absolute top-12 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#1a365d]/15 to-transparent pointer-events-none"
+            className="hidden lg:block absolute top-12 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#0a0a0a]/15 to-transparent pointer-events-none"
             aria-hidden="true"
           />
 
@@ -576,8 +576,8 @@ function AblaufSection() {
               <div key={schritt.nummer} className="relative flex flex-col items-center text-center group">
                 {/* Number circle */}
                 <div className="relative mb-6">
-                  <div className="w-24 h-24 rounded-full bg-white border-2 border-[#1a365d]/10 flex items-center justify-center shadow-lg group-hover:border-[#dc2626] group-hover:shadow-[#dc2626]/20 transition-all duration-300">
-                    <span className="text-3xl font-bold text-[#1a365d] group-hover:text-[#dc2626] transition-colors duration-300">
+                  <div className="w-24 h-24 rounded-full bg-white border-2 border-[#0a0a0a]/10 flex items-center justify-center shadow-lg group-hover:border-[#dc2626] group-hover:shadow-[#dc2626]/20 transition-all duration-300">
+                    <span className="text-3xl font-bold text-[#0a0a0a] group-hover:text-[#dc2626] transition-colors duration-300">
                       {schritt.nummer}
                     </span>
                   </div>
@@ -585,7 +585,7 @@ function AblaufSection() {
                   <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#dc2626] rounded-full border-2 border-white" />
                 </div>
 
-                <h3 className="text-xl font-bold text-[#1a365d] mb-3">
+                <h3 className="text-xl font-bold text-[#0a0a0a] mb-3">
                   {schritt.title}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed max-w-[260px]">
@@ -615,27 +615,28 @@ function ServiceSection() {
 
   return (
     <section id="service" className="relative overflow-hidden">
-      {/* Background split - lightning bolt style */}
-      <div className="absolute inset-0 flex">
-        {/* Left side - darker blue */}
-        <div className="w-1/2 bg-[#0f2744]" />
-        {/* Right side - lighter blue */}
-        <div className="w-1/2 bg-[#1a365d]" />
-      </div>
+      {/* Background split - diagonal slash style */}
+      <div className="absolute inset-0 bg-[#0a0a0a]" />
+      <div
+        className="absolute inset-0 bg-[#dc2626]"
+        style={{ clipPath: "polygon(0 0, 58% 0, 42% 100%, 0 100%)" }}
+      />
 
-      {/* Lightning bolt SVG separator */}
+      {/* Diagonal white separator */}
       <svg
-        className="absolute top-0 h-full z-10"
-        style={{ left: "50%", transform: "translateX(-50%)" }}
-        viewBox="0 0 20 800"
+        className="absolute inset-0 w-full h-full z-10"
         preserveAspectRatio="none"
+        viewBox="0 0 100 100"
+        overflow="visible"
       >
-        <path
-          d="M 10 0 L 5 200 L 15 300 L 8 500 L 18 700 L 10 800"
-          fill="none"
-          stroke="#dc2626"
-          strokeWidth="3"
-          strokeLinecap="round"
+        <line
+          x1="58.8"
+          y1="-4"
+          x2="41.2"
+          y2="104"
+          stroke="#ffffff"
+          vectorEffect="non-scaling-stroke"
+          style={{ strokeWidth: "8px" }}
         />
       </svg>
 
@@ -648,13 +649,13 @@ function ServiceSection() {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 Deshalb
                 <br />
-                <span className="text-[#dc2626]">MEISTERWERK</span>
+                <span className="text-[#0a0a0a]">MEISTERWERK</span>
               </h2>
             </div>
           </div>
 
           {/* Right side - Bullet points */}
-          <div className="lg:w-1/2 lg:pl-16 lg:pt-20 pb-20">
+          <div className="lg:w-1/2 lg:pl-32 lg:pt-20 pb-20">
             <ul className="space-y-4">
               {servicePoints.map((point, index) => {
                 const Icon = point.icon;
@@ -678,93 +679,6 @@ function ServiceSection() {
   );
 }
 
-// Standorte
-function StandorteSection() {
-  const standorte = [
-    {
-      name: "Berlin Süd",
-      address: "Britzer Damm 123",
-      plz: "12347 Berlin",
-      mapsUrl: "https://maps.app.goo.gl/TQ9EiUETGha1eTS56",
-    },
-    {
-      name: "Berlin Nord",
-      address: "Spandauer Damm 185",
-      plz: "14050 Berlin",
-      mapsUrl: "https://maps.app.goo.gl/Qfwck6LJeAAaC2ru6",
-    },
-    {
-      name: "Berlin Ost",
-      address: "Regattastraße 132",
-      plz: "12527 Berlin Grünau",
-      mapsUrl: "https://maps.app.goo.gl/CkxMKik6ivC6F4Rh8",
-    },
-  ];
-
-  return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <span className="text-[#dc2626] font-semibold text-sm uppercase tracking-wider">
-            Unsere Standorte
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1a365d] mt-2 mb-4">
-            Immer in Ihrer Nähe
-          </h2>
-        </div>
-
-        {/* Google Maps Embed - Berlin */}
-        <div className="max-w-5xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-xl border-2 border-[#1a365d]">
-          <iframe
-            src="https://maps.google.com/maps?q=Berlin&t=&z=10&ie=UTF8&iwloc=&output=embed"
-            width="100%"
-            height="400"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Meisterwerk Berlin – Standorte auf der Karte"
-          />
-        </div>
-
-        {/* Standort Cards */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {standorte.map((standort) => (
-            <a
-              key={standort.name}
-              href={standort.mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              <div className="bg-[#1a365d] p-6 rounded-2xl border-2 border-[#1a365d] shadow-[0.4rem_0.4rem_0_0_#0f2744] hover:shadow-[0.5rem_0.5rem_0_0_#0f2744] hover:translate-x-[-0.1rem] hover:translate-y-[-0.1rem] transition-all duration-200">
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-white text-xl font-bold leading-tight">
-                    {standort.name}
-                  </h3>
-                  <p className="text-white/80 text-sm">{standort.address}</p>
-                  <p className="text-white/80 text-sm">{standort.plz}</p>
-
-                  <p className="text-[#dc2626] text-sm font-semibold mt-4 flex items-center gap-2">
-                    <svg
-                      className="w-4 h-4"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                    </svg>
-                    Öffnen mit Google Maps
-                  </p>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 // Kontakt Section
 function KontaktSection() {
   return (
@@ -774,7 +688,7 @@ function KontaktSection() {
           <span className="text-[#dc2626] font-semibold text-sm uppercase tracking-[0.2em]">
             Kontakt
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1a365d] mt-3 mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0a0a0a] mt-3 mb-4 tracking-tight">
             Sprechen Sie mit uns
           </h2>
           <div className="w-16 h-1 bg-[#dc2626] mx-auto mb-6 rounded-full" />
@@ -804,14 +718,14 @@ function KontaktSection() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-[#1a365d]">
+                <h3 className="text-2xl font-bold text-[#0a0a0a]">
                   Kontaktformular
                 </h3>
               </div>
               <form className="space-y-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm font-semibold text-[#1a365d] mb-2 block">
+                    <label className="text-sm font-semibold text-[#0a0a0a] mb-2 block">
                       Vorname <span className="text-[#dc2626]">*</span>
                     </label>
                     <Input
@@ -820,7 +734,7 @@ function KontaktSection() {
                     />
                   </div>
                   <div>
-                    <label className="text-sm font-semibold text-[#1a365d] mb-2 block">
+                    <label className="text-sm font-semibold text-[#0a0a0a] mb-2 block">
                       Nachname <span className="text-[#dc2626]">*</span>
                     </label>
                     <Input
@@ -831,7 +745,7 @@ function KontaktSection() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm font-semibold text-[#1a365d] mb-2 block">
+                    <label className="text-sm font-semibold text-[#0a0a0a] mb-2 block">
                       E-Mail <span className="text-[#dc2626]">*</span>
                     </label>
                     <Input
@@ -841,7 +755,7 @@ function KontaktSection() {
                     />
                   </div>
                   <div>
-                    <label className="text-sm font-semibold text-[#1a365d] mb-2 block">
+                    <label className="text-sm font-semibold text-[#0a0a0a] mb-2 block">
                       Telefon
                     </label>
                     <Input
@@ -852,7 +766,7 @@ function KontaktSection() {
                   </div>
                 </div>
                 <div>
-                  <label className="text-sm font-semibold text-[#1a365d] mb-2 block">
+                  <label className="text-sm font-semibold text-[#0a0a0a] mb-2 block">
                     Ihre Nachricht <span className="text-[#dc2626]">*</span>
                   </label>
                   <Textarea
@@ -893,7 +807,7 @@ function KontaktSection() {
           {/* Rechts: Öffnungszeiten und Kontaktdaten */}
           <div className="lg:col-span-5 space-y-5">
             {/* Kontaktdaten Card */}
-            <div className="bg-[#1a365d] rounded-2xl shadow-xl p-8 text-white relative overflow-hidden">
+            <div className="bg-[#0a0a0a] rounded-2xl shadow-xl p-8 text-white relative overflow-hidden">
               <div
                 className="absolute top-0 right-0 w-40 h-40 bg-[#dc2626]/10 rounded-full blur-3xl"
                 aria-hidden="true"
@@ -964,7 +878,7 @@ function KontaktSection() {
 
             {/* Öffnungszeiten Card */}
             <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
-              <h3 className="text-xl font-bold text-[#1a365d] mb-5 flex items-center gap-2">
+              <h3 className="text-xl font-bold text-[#0a0a0a] mb-5 flex items-center gap-2">
                 <span className="w-1 h-6 bg-[#dc2626] rounded-full" />
                 Öffnungszeiten
               </h3>
@@ -972,7 +886,7 @@ function KontaktSection() {
                 <div className="flex items-center justify-between py-2 border-b border-gray-100">
                   <div className="flex items-center gap-3">
                     <Clock className="w-4 h-4 text-[#dc2626]" />
-                    <span className="text-[#1a365d] font-medium">
+                    <span className="text-[#0a0a0a] font-medium">
                       Mo – Fr
                     </span>
                   </div>
@@ -983,7 +897,7 @@ function KontaktSection() {
                 <div className="flex items-center justify-between py-2 border-b border-gray-100">
                   <div className="flex items-center gap-3">
                     <Clock className="w-4 h-4 text-[#dc2626]" />
-                    <span className="text-[#1a365d] font-medium">Samstag</span>
+                    <span className="text-[#0a0a0a] font-medium">Samstag</span>
                   </div>
                   <span className="text-gray-700 font-semibold">
                     10:00 – 14:00
@@ -1023,7 +937,7 @@ function KontaktSection() {
 // Footer
 function Footer() {
   return (
-    <footer className="bg-[#1a365d] text-white py-12">
+    <footer className="bg-[#0a0a0a] text-white py-12">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
@@ -1035,38 +949,31 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-3 text-lg">Leistungen</h4>
+            <h4 className="font-semibold mb-3 text-lg">Navigation</h4>
             <ul className="space-y-2 text-white/70 text-sm">
               <li>
-                <Link
-                  href="/rolladenreparatur"
-                  className="hover:text-white transition-colors"
-                >
-                  Rollladen Reparatur
+                <Link href="#leistungen" className="hover:text-white transition-colors">
+                  Leistungen
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/rollladennotdienst"
-                  className="hover:text-white transition-colors"
-                >
-                  Rollladennotdienst
+                <Link href="#galerie" className="hover:text-white transition-colors">
+                  Galerie
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/holzrollladen"
-                  className="hover:text-white transition-colors"
-                >
-                  Holzrollladen
+                <Link href="#ablauf" className="hover:text-white transition-colors">
+                  Ablauf
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/markise"
-                  className="hover:text-white transition-colors"
-                >
-                  Markisen
+                <Link href="#kontakt" className="hover:text-white transition-colors">
+                  Kontakt
+                </Link>
+              </li>
+              <li>
+                <Link href="#faq" className="hover:text-white transition-colors">
+                  FAQ
                 </Link>
               </li>
             </ul>
@@ -1078,16 +985,52 @@ function Footer() {
               <li>Tel: 030 66 77 44 63</li>
               <li>E-Mail: service@meisterwerk-berlin.de</li>
               <li>WhatsApp: 030 66 77 44 63</li>
+              <li className="pt-2">Mo – Fr: 08:00 – 18:00 Uhr</li>
+              <li>Samstag: 10:00 – 14:00 Uhr</li>
+              <li className="text-[#dc2626] font-semibold">
+                24/7 Notdienst verfügbar
+              </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-3 text-lg">Öffnungszeiten</h4>
-            <ul className="space-y-2 text-white/70 text-sm">
-              <li>Mo - Fr: 08:00 - 18:00 Uhr</li>
-              <li>Samstag: 10:00 - 14:00 Uhr</li>
-              <li className="text-[#dc2626] font-semibold">
-                24/7 Notdienst verfügbar
+            <h4 className="font-semibold mb-3 text-lg">Standorte</h4>
+            <ul className="space-y-3 text-white/70 text-sm">
+              <li>
+                <a
+                  href="https://maps.app.goo.gl/TQ9EiUETGha1eTS56"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors block"
+                >
+                  <span className="text-white font-semibold">Berlin Süd</span>
+                  <br />
+                  Britzer Damm 123, 12347
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://maps.app.goo.gl/Qfwck6LJeAAaC2ru6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors block"
+                >
+                  <span className="text-white font-semibold">Berlin Nord</span>
+                  <br />
+                  Spandauer Damm 185, 14050
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://maps.app.goo.gl/CkxMKik6ivC6F4Rh8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors block"
+                >
+                  <span className="text-white font-semibold">Berlin Ost</span>
+                  <br />
+                  Regattastraße 132, 12527
+                </a>
               </li>
             </ul>
           </div>
@@ -1125,14 +1068,13 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <LeistungenSection />
-        <AblaufSection />
         <NotdienstBanner />
         <GalerieSection />
         <TestimonialsSection />
         <ServiceSection />
-        <FaqSection />
-        <StandorteSection />
+        <AblaufSection />
         <KontaktSection />
+        <FaqSection />
       </main>
       <Footer />
     </div>

@@ -27,7 +27,7 @@ export default function BerlinMap({ standorte }: BerlinMapProps) {
              L 180 70 L 175 95 L 160 115 L 130 125 L 100 130 L 70 125 
              L 45 115 L 25 95 L 20 70 L 25 50 Z"
           fill="#e8e8e8"
-          stroke="#1a365d"
+          stroke="#0a0a0a"
           strokeWidth="1.5"
         />
 
@@ -87,7 +87,7 @@ export default function BerlinMap({ standorte }: BerlinMapProps) {
             {/* Tooltip on hover */}
             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
               <div className="bg-white rounded-lg shadow-xl p-3 min-w-[160px] text-center border border-gray-100">
-                <p className="font-bold text-[#1a365d] text-sm">
+                <p className="font-bold text-[#0a0a0a] text-sm">
                   {standort.name}
                 </p>
                 <p className="text-gray-600 text-xs mt-1">{standort.address}</p>
