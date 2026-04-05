@@ -459,8 +459,8 @@ function GalerieSection() {
           </h2>
           <div className="w-16 h-1 bg-[#dc2626] mx-auto mb-6 rounded-full" />
           <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-            Ein paar Beispiele aus unserem Alltag – mit der Maus über ein Bild
-            fahren, um das Ergebnis zu sehen.
+            Ein paar Beispiele aus unserem Alltag – Bild antippen bzw. mit der
+            Maus rüberfahren, um das Ergebnis zu sehen.
           </p>
         </div>
 
@@ -479,8 +479,16 @@ function BeforeAfterCard({
 }: {
   projekt: { title: string; ort: string; vorher: string; nachher: string };
 }) {
+  const [showNachher, setShowNachher] = useState(false);
+
   return (
-    <div className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 aspect-[4/5] bg-gray-100">
+    <button
+      type="button"
+      onClick={() => setShowNachher((v) => !v)}
+      onMouseEnter={() => setShowNachher(true)}
+      onMouseLeave={() => setShowNachher(false)}
+      className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 aspect-[4/5] bg-gray-100 w-full text-left cursor-pointer"
+    >
       {/* Nachher (Base Layer) */}
       <Image
         src={projekt.nachher}
@@ -490,8 +498,11 @@ function BeforeAfterCard({
         className="object-cover"
       />
 
-      {/* Vorher (Top Layer - fades out on hover) */}
-      <div className="absolute inset-0 transition-opacity duration-500 ease-out group-hover:opacity-0">
+      {/* Vorher (Top Layer - fades out when showNachher) */}
+      <div
+        className="absolute inset-0 transition-opacity duration-500 ease-out"
+        style={{ opacity: showNachher ? 0 : 1 }}
+      >
         <Image
           src={projekt.vorher}
           alt={`${projekt.title} - Vorher`}
@@ -503,12 +514,26 @@ function BeforeAfterCard({
 
       {/* Badge "Vorher" / "Nachher" */}
       <div className="absolute top-4 left-4 z-10">
-        <span className="bg-white/95 backdrop-blur-sm text-[#0a0a0a] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md transition-opacity duration-500 group-hover:opacity-0">
+        <span
+          className="bg-white/95 backdrop-blur-sm text-[#0a0a0a] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md transition-opacity duration-500"
+          style={{ opacity: showNachher ? 0 : 1 }}
+        >
           Vorher
         </span>
-        <span className="absolute top-0 left-0 bg-[#dc2626] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        <span
+          className="absolute top-0 left-0 bg-[#dc2626] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md transition-opacity duration-500"
+          style={{ opacity: showNachher ? 1 : 0 }}
+        >
           Nachher
         </span>
+      </div>
+
+      {/* Tap-Hinweis nur auf Mobile, nur wenn Vorher sichtbar */}
+      <div
+        className="md:hidden absolute top-4 right-4 z-10 bg-black/60 backdrop-blur-sm text-white text-[10px] font-semibold px-3 py-1.5 rounded-full transition-opacity duration-500"
+        style={{ opacity: showNachher ? 0 : 1 }}
+      >
+        Tippen für Nachher
       </div>
 
       {/* Gradient + Info */}
@@ -518,7 +543,7 @@ function BeforeAfterCard({
         </h3>
         <p className="text-white/80 text-xs drop-shadow">{projekt.ort}</p>
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -615,16 +640,16 @@ function ServiceSection() {
 
   return (
     <section id="service" className="relative overflow-hidden">
-      {/* Background split - diagonal slash style */}
+      {/* Background split - diagonal slash style (nur Desktop) */}
       <div className="absolute inset-0 bg-[#0a0a0a]" />
       <div
-        className="absolute inset-0 bg-[#dc2626]"
+        className="hidden lg:block absolute inset-0 bg-[#dc2626]"
         style={{ clipPath: "polygon(0 0, 58% 0, 42% 100%, 0 100%)" }}
       />
 
-      {/* Diagonal white separator */}
+      {/* Diagonal white separator (nur Desktop) */}
       <svg
-        className="absolute inset-0 w-full h-full z-10"
+        className="hidden lg:block absolute inset-0 w-full h-full z-10"
         preserveAspectRatio="none"
         viewBox="0 0 100 100"
         overflow="visible"
@@ -649,7 +674,7 @@ function ServiceSection() {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 Deshalb
                 <br />
-                <span className="text-[#0a0a0a]">MEISTERWERK</span>
+                <span className="text-[#dc2626] lg:text-[#0a0a0a]">MEISTERWERK</span>
               </h2>
             </div>
           </div>

@@ -30,10 +30,39 @@ export function ExpandingPanels({
   }, [isPaused, items.length, autoRotateMs]);
 
   return (
-    <div
-      className="flex gap-2 h-[420px] max-w-6xl mx-auto"
-      onMouseLeave={() => setIsPaused(false)}
-    >
+    <>
+      {/* Mobile: einfaches Karten-Grid */}
+      <div className="md:hidden grid grid-cols-1 gap-4 max-w-xl mx-auto">
+        {items.map((item) => {
+          const Icon = item.icon;
+          return (
+            <div
+              key={item.title}
+              className="bg-[#0a0a0a] rounded-2xl p-6 shadow-lg"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#dc2626] flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-6 h-6 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-white/80 text-sm leading-relaxed">
+                    {item.text}
+                  </p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Desktop: animierte Expanding-Panels */}
+      <div
+        className="hidden md:flex gap-2 h-[420px] max-w-6xl mx-auto"
+        onMouseLeave={() => setIsPaused(false)}
+      >
       {items.map((item, index) => {
         const Icon = item.icon;
         const isActive = index === activeIndex;
@@ -129,16 +158,17 @@ export function ExpandingPanels({
         );
       })}
 
-      <style jsx>{`
-        @keyframes panelProgress {
-          from {
-            transform: scaleX(0);
+        <style jsx>{`
+          @keyframes panelProgress {
+            from {
+              transform: scaleX(0);
+            }
+            to {
+              transform: scaleX(1);
+            }
           }
-          to {
-            transform: scaleX(1);
-          }
-        }
-      `}</style>
-    </div>
+        `}</style>
+      </div>
+    </>
   );
 }

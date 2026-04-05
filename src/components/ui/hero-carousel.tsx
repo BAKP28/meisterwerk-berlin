@@ -47,6 +47,7 @@ const carouselItems = [
 export function HeroCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
   useEffect(() => {
     if (isPaused) return;
@@ -56,13 +57,38 @@ export function HeroCarousel() {
     return () => clearInterval(interval);
   }, [isPaused]);
 
+  const goNext = () =>
+    setActiveIndex((prev) => (prev + 1) % carouselItems.length);
+  const goPrev = () =>
+    setActiveIndex(
+      (prev) => (prev - 1 + carouselItems.length) % carouselItems.length,
+    );
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+    setIsPaused(true);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const diff = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(diff) > 50) {
+      if (diff < 0) goNext();
+      else goPrev();
+    }
+    setTouchStartX(null);
+    setTimeout(() => setIsPaused(false), 3000);
+  };
+
   const active = carouselItems[activeIndex];
 
   return (
     <div
-      className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl group"
+      className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl group touch-pan-y"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       {/* Bild-Stack mit Fade-Übergang */}
       <AnimatePresence mode="sync">
