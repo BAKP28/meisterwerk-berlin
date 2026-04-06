@@ -28,7 +28,7 @@ import { ExpandingPanels } from "@/components/ui/expanding-panels";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { HeroCarousel } from "@/components/ui/hero-carousel";
+import { FeatureCarousel } from "@/components/ui/feature-carousel";
 import { GridBackground } from "@/components/ui/grid-background";
 import NavHeader from "@/components/ui/nav-header";
 import TestimonialsSection from "@/components/ui/testimonials-section";
@@ -200,9 +200,42 @@ function HeroSection() {
             </div>
           </div>
 
-          {/* RIGHT SIDE: Accordion */}
+          {/* RIGHT SIDE: 3D Carousel */}
           <div className="h-[400px] lg:h-[450px]">
-            <HeroCarousel />
+            <FeatureCarousel
+              images={[
+                {
+                  src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&auto=format&fit=crop&q=60",
+                  alt: "Rollladen Reparatur",
+                  title: "Rollladen Reparatur",
+                  badge: "Reparatur",
+                },
+                {
+                  src: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&auto=format&fit=crop&q=60",
+                  alt: "24/7 Notdienst",
+                  title: "24/7 Notdienst",
+                  badge: "Notdienst",
+                },
+                {
+                  src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&auto=format&fit=crop&q=60",
+                  alt: "Holzrollladen",
+                  title: "Holzrollladen",
+                  badge: "Tradition",
+                },
+                {
+                  src: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=900&auto=format&fit=crop&q=60",
+                  alt: "Markisen",
+                  title: "Markisen",
+                  badge: "Sonnenschutz",
+                },
+                {
+                  src: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=900&auto=format&fit=crop&q=60",
+                  alt: "Rollladenmontage",
+                  title: "Rollladenmontage",
+                  badge: "Montage",
+                },
+              ]}
+            />
           </div>
         </div>
       </div>
