@@ -22,6 +22,9 @@ export const FeatureCarousel = React.forwardRef<
     Math.floor(images.length / 2)
   );
 
+  // Timer-Reset Key — wird bei jedem manuellen Klick/Swipe erhöht
+  const [timerReset, setTimerReset] = React.useState(0);
+
   const handleNext = React.useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
   }, [images.length]);
@@ -29,6 +32,10 @@ export const FeatureCarousel = React.forwardRef<
   const handlePrev = React.useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   }, [images.length]);
+
+  // Manuelle Navigation: Bild wechseln + Timer resetten
+  const goNext = () => { handleNext(); setTimerReset((v) => v + 1); };
+  const goPrev = () => { handlePrev(); setTimerReset((v) => v + 1); };
 
   // Touch/Swipe Support für Mobile
   const touchStartX = React.useRef<number | null>(null);
@@ -41,8 +48,8 @@ export const FeatureCarousel = React.forwardRef<
     if (touchStartX.current === null) return;
     const diff = e.changedTouches[0].clientX - touchStartX.current;
     if (Math.abs(diff) > 50) {
-      if (diff < 0) handleNext();
-      else handlePrev();
+      if (diff < 0) goNext();
+      else goPrev();
     }
     touchStartX.current = null;
   };
@@ -50,11 +57,11 @@ export const FeatureCarousel = React.forwardRef<
   React.useEffect(() => {
     const timer = setInterval(handleNext, 4000);
     return () => clearInterval(timer);
-  }, [handleNext]);
+  }, [handleNext, timerReset]);
 
   const handleClick = (pos: number) => {
-    if (pos < 0) handlePrev();
-    if (pos > 0) handleNext();
+    if (pos < 0) goPrev();
+    if (pos > 0) goNext();
   };
 
   return (

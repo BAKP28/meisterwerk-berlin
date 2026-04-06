@@ -518,8 +518,8 @@ function BeforeAfterCard({
     <button
       type="button"
       onClick={() => setShowNachher((v) => !v)}
-      onMouseEnter={() => setShowNachher(true)}
-      onMouseLeave={() => setShowNachher(false)}
+      onPointerEnter={(e) => { if (e.pointerType !== "touch") setShowNachher(true); }}
+      onPointerLeave={(e) => { if (e.pointerType !== "touch") setShowNachher(false); }}
       className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 aspect-[4/5] bg-gray-100 w-full text-left cursor-pointer"
     >
       {/* Nachher (Base Layer) */}
